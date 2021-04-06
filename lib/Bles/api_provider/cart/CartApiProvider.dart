@@ -103,7 +103,7 @@ class CartApiProvider extends BaseApiProvider {
       return null;
     }
   }
-  
+
 }
 
 

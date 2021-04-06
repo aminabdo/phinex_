@@ -2,18 +2,22 @@
 //
 // import 'package:flutter/cupertino.dart';
 // import 'package:flutter/services.dart';
-// import 'package:pusher_websocket_flutter/pusher.dart';
-// import 'package:rxdart/rxdart.dart';
-// import 'package:phinex/Bles/Model/requests/taxi_client/ChangeRideStatusRequest.dart';
-// import 'package:phinex/Bles/Model/requests/taxi_client/MakeRideRequest.dart';
-// import 'package:phinex/Bles/Model/requests/taxi_client/UserRateRequest.dart';
 // import 'package:phinex/Bles/Model/responses/taxi_client/BaseRideResponse.dart';
 // import 'package:phinex/Bles/Model/responses/taxi_client/General.dart';
-// import 'package:phinex/Bles/Model/responses/taxi_client/ShowRideReplyByRide.dart';
-// import 'package:phinex/Bles/Model/responses/taxi_client/SingleRideReply.dart';
-// import 'package:phinex/Bles/Model/responses/taxi_client/UserRidesResponse.dart';
-// import 'package:phinex/Bles/Model/responses/taxi_client/VehicleTypeResponse.dart';
-// import 'package:phinex/utils/base/BaseBloc.dart';
+// import 'package:phinex/ui/views/driver/driver_behavour_class.dart';
+// import 'package:pusher_websocket_flutter/pusher.dart';
+// import 'package:rxdart/rxdart.dart';
+// import 'package:tbdm/Bles/Model/requests/taxi_client/ChangeRideStatusRequest.dart';
+// import 'package:tbdm/Bles/Model/requests/taxi_client/MakeRideRequest.dart';
+// import 'package:tbdm/Bles/Model/requests/taxi_client/UserRateRequest.dart';
+// import 'package:tbdm/Bles/Model/responses/taxi_client/BaseRideResponse.dart';
+// import 'package:tbdm/Bles/Model/responses/taxi_client/General.dart';
+// import 'package:tbdm/Bles/Model/responses/taxi_client/ShowRideReplyByRide.dart';
+// import 'package:tbdm/Bles/Model/responses/taxi_client/SingleRideReply.dart';
+// import 'package:tbdm/Bles/Model/responses/taxi_client/UserRidesResponse.dart';
+// import 'package:tbdm/Bles/Model/responses/taxi_client/VehicleTypeResponse.dart';
+// import 'package:tbdm/ui/views/driver/driver_behavour_class.dart';
+// import 'package:tbdm/utils/base/BaseBloc.dart';
 //
 // import '../../ApiRoutes.dart';
 //
@@ -149,56 +153,56 @@
 //   bool logging = true;
 //
 //   Future<void> initPusher() async {
-//     try {
-//       await Pusher.init(
-//           appKey,
-//           PusherOptions(
-//             cluster: cluster,
-//           ),
-//           enableLogging: logging);
-//
-//       await connect();
-//     } on PlatformException catch (e) {
-//       print("platform exeption ------------------->   ");
-//       print(e.message);
-//     }
+//     // try {
+//     //   await Pusher.init(
+//     //       appKey,
+//     //       PusherOptions(
+//     //         cluster: cluster,
+//     //       ),
+//     //       enableLogging: logging);
+//     //
+//     //   await connect();
+//     // } on PlatformException catch (e) {
+//     //   print("platform exeption ------------------->   ");
+//     //   print(e.message);
+//     // }
 //   }
 //
 //   connect() {
-//     Pusher.connect(onConnectionStateChange: (x) async {
-//       lastConnectionState = x.currentState;
-//       debugPrint("in connection --->> >> ");
-//     }, onError: (x) {
-//       debugPrint("Error in connection --->> >> : ${x.message}");
-//     });
+//     // Pusher.connect(onConnectionStateChange: (x) async {
+//     //   lastConnectionState = x.currentState;
+//     //   debugPrint("in connection --->> >> ");
+//     // }, onError: (x) {
+//     //   debugPrint("Error in connection --->> >> : ${x.message}");
+//     // });
 //   }
 //
 //   disconnect() {
-//     Pusher.disconnect();
+//     // Pusher.disconnect();
 //   }
 //
 //   subscribeRideID(int rideID) async {
-//     channel = await Pusher.subscribe(channelBaseRide + rideID.toString());
+//     // channel = await Pusher.subscribe(channelBaseRide + rideID.toString());
 //   }
 //
 //   subscribeRide() async {
-//     channel = await Pusher.subscribe(channelRide.toString());
+//     // channel = await Pusher.subscribe(channelRide.toString());
 //   }
 //
 //   subscribeRideReply(int rideReplyID) async {
-//     channel = await Pusher.subscribe(channelRideReply + rideReplyID.toString());
+//     // channel = await Pusher.subscribe(channelRideReply + rideReplyID.toString());
 //   }
 //
 //   unsubscribeRideID(int rideID) async {
-//     await Pusher.unsubscribe(channelBaseRide + rideID.toString());
+//     // await Pusher.unsubscribe(channelBaseRide + rideID.toString());
 //   }
 //
 //   unsubscribeRide() async {
-//     await Pusher.unsubscribe(channelRide.toString());
+//     // await Pusher.unsubscribe(channelRide.toString());
 //   }
 //
 //   unsubscribeRideReplyID(int rideReplyID) async {
-//     await Pusher.unsubscribe(channelRideReply + rideReplyID.toString());
+//     // await Pusher.unsubscribe(channelRideReply + rideReplyID.toString());
 //   }
 //
 //   bind() async {
