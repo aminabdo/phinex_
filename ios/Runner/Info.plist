@@ -22,6 +22,28 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Phinex App This permission is not needed by the app, but it is required by an underlying API. If you see this dialog, contact us.</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Phinex App Need Calendar usage to add appointments of app to your calender</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Phinex App Need to Camera usage to add your photos in app taken by camera</string>
+	<key>NSCameraUsageDescription </key>
+	<string>Phinex App needs permission for the camera usage to add your profile ,
+    	image or you gallery images</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Phinex app uses the Contacts to show your contacts friends in our app</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Your location is required for Phinex App benefits for you to request adriver from your location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Your location is required for Phinex App benefits for you to request adriver from your location</string>
+	<key>NSMotionUsageDescription</key>
+	<string>Phinex App Use Motions in some screens in app</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Phinex app needs permission for the photo library to add your selections
+    	to your profile in app</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Phinex App need a permission to use Speech Recognition</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -41,29 +63,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-
-	<key>NSAppleMusicUsageDescription</key>
-    	<string>Phinex App This permission is not needed by the app, but it is required by an underlying API. If you see this dialog, contact us.</string>
-    	<key>NSCalendarsUsageDescription</key>
-    	<string>Phinex App Need Calendar usage to add appointments of app to your calender</string>
-    	<key>NSCameraUsageDescription</key>
-    	<string>Phinex App Need to Camera usage to add your photos in app taken by camera</string>
-    	<key>NSCameraUsageDescription </key>
-    	<string>Phinex App needs permission for the camera usage to add your profile ,
-    	image or you gallery images</string>
-    	<key>NSContactsUsageDescription</key>
-    	<string>Phinex app uses the Contacts to show your contacts friends in our app</string>
-    	<key>NSLocationAlwaysUsageDescription</key>
-    	<string>Your location is required for Phinex App benefits for you to request adriver from your location</string>
-    	<key>NSLocationWhenInUseUsageDescription</key>
-    	<string>Your location is required for Phinex App benefits for you to request adriver from your location</string>
-    	<key>NSMotionUsageDescription</key>
-    	<string>Phinex App Use Motions in some screens in app</string>
-    	<key>NSPhotoLibraryUsageDescription</key>
-    	<string>Phinex app needs permission for the photo library to add your selections
-    	to your profile in app</string>
-    	<key>NSSpeechRecognitionUsageDescription</key>
-    	<string>Phinex App need a permission to use Speech Recognition</string>
-
 </dict>
 </plist>
