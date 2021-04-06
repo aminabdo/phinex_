@@ -24,6 +24,7 @@ import 'package:phinex/utils/app_localization.dart';
 import 'package:phinex/utils/app_utils.dart';
 import 'package:phinex/utils/consts.dart';
 
+import '../../../utils/consts.dart';
 import 'home_search_page.dart';
 import 'services_page.dart';
 
@@ -172,15 +173,15 @@ class _HomeContentsState extends State<HomeContents> {
                     decoration: BoxDecoration(
                       color: mainColor,
                       borderRadius:
-                          Localizations.localeOf(context).languageCode == 'ar'
-                              ? BorderRadius.only(
-                                  topLeft: Radius.circular(30),
-                                  bottomLeft: Radius.circular(30),
-                                )
-                              : BorderRadius.only(
-                                  topRight: Radius.circular(30),
-                                  bottomRight: Radius.circular(30),
-                                ),
+                      Localizations.localeOf(context).languageCode == 'ar'
+                          ? BorderRadius.only(
+                        topLeft: Radius.circular(30),
+                        bottomLeft: Radius.circular(30),
+                      )
+                          : BorderRadius.only(
+                        topRight: Radius.circular(30),
+                        bottomRight: Radius.circular(30),
+                      ),
                     ),
                     child: Icon(
                       Icons.search,
@@ -318,29 +319,29 @@ class _HomeContentsState extends State<HomeContents> {
                             children: [
                               categories[index].isSvg
                                   ? SvgPicture.asset(
-                                      categories[index].imagePath,
-                                      width: ScreenUtil().setWidth(
-                                          categories[index].width ?? 60),
-                                      height: ScreenUtil().setHeight(
-                                          categories[index].height ?? 90),
-                                    )
+                                categories[index].imagePath,
+                                width: ScreenUtil().setWidth(
+                                    categories[index].width ?? 60),
+                                height: ScreenUtil().setHeight(
+                                    categories[index].height ?? 90),
+                              )
                                   : Image.asset(
-                                      categories[index].imagePath,
-                                      width: ScreenUtil().setWidth(
-                                          categories[index].width ?? 60),
-                                      height: ScreenUtil().setHeight(
-                                          categories[index].height ?? 90),
-                                    ),
+                                categories[index].imagePath,
+                                width: ScreenUtil().setWidth(
+                                    categories[index].width ?? 60),
+                                height: ScreenUtil().setHeight(
+                                    categories[index].height ?? 90),
+                              ),
                               index == 10 && initiateChatWithAdmin
                                   ? Loader(
-                                      size: 20,
-                                    )
+                                size: 20,
+                              )
                                   : Text(
-                                      categories[index].title,
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
+                                categories[index].title,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                             ],
                           ),
                         ),
@@ -352,7 +353,7 @@ class _HomeContentsState extends State<HomeContents> {
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
                 gridDelegate:
-                    MySliverGridDelegateWithFixedCrossAxisCountAndFixedHeight(
+                MySliverGridDelegateWithFixedCrossAxisCountAndFixedHeight(
                   crossAxisCount: 2,
                   height: ScreenUtil().setHeight(170),
                   crossAxisSpacing: 15,

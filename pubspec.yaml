@@ -61,6 +61,7 @@ dependencies:
   geocoder: ^0.2.1
   google_maps_flutter:
   google_places_picker: 2.1.0+2
+  flutter_polyline_points: ^0.2.4
   location: ^3.2.1
   flutter_html:
 
