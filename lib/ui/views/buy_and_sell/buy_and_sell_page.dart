@@ -66,21 +66,21 @@ class _BuyAndSellPageState extends State<BuyAndSellPage> {
             },
             color: Colors.black,
           ),
-          IconButton(
-            icon: Icon(Icons.add),
-            onPressed: () {
-              if(AppUtils.userData == null) {
-                AppUtils.showNeedToRegisterDialog(context);
-                return;
-              }
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) => AddBuySellProductPage(),
-                ),
-              );
-            },
-            color: Colors.black,
-          ),
+          // IconButton(
+          //   icon: Icon(Icons.add),
+          //   onPressed: () {
+          //     if(AppUtils.userData == null) {
+          //       AppUtils.showNeedToRegisterDialog(context);
+          //       return;
+          //     }
+          //     Navigator.of(context).push(
+          //       MaterialPageRoute(
+          //         builder: (_) => AddBuySellProductPage(),
+          //       ),
+          //     );
+          //   },
+          //   color: Colors.black,
+          // ),
         ],
         onBackBtnClicked: () {
           Provider.of<PageProvider>(context, listen: false)
