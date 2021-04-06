@@ -11,8 +11,6 @@ import 'package:phinex/ui/views/auth/login_page.dart';
 import 'package:phinex/ui/views/became_a_partner/became_a_partner_main_page.dart';
 import 'package:phinex/ui/views/help/help_page.dart';
 import 'package:phinex/ui/views/home/home_contents.dart';
-import 'package:phinex/ui/views/lot/my_lot_page.dart';
-import 'package:phinex/ui/views/lot/subscriped_lot_page.dart';
 import 'package:phinex/ui/views/orders/my_orders_page.dart';
 import 'package:phinex/ui/views/profile/profile_page.dart';
 import 'package:phinex/ui/views/reservations/my_reservations_page.dart';
@@ -384,61 +382,61 @@ class _MorePageState extends State<MorePage> {
               SizedBox(
                 height: ScreenUtil().setHeight(25),
               ),
-              // isLoggedin
-              //     ? Container(
-              //         decoration: BoxDecoration(
-              //           border: Border.symmetric(
-              //             horizontal: BorderSide(
-              //               color: Colors.grey,
-              //               width: .5,
-              //             ),
-              //           ),
-              //         ),
-              //         child: drawerItem(
-              //           context,
-              //           AppLocalization.of(context)
-              //               .translate('subscribed_auction'),
-              //           FontAwesomeIcons.gavel,
-              //           onTap: () {
-              //             if (AppUtils.userData == null) {
-              //               AppUtils.showNeedToRegisterDialog(context);
-              //               return;
-              //             }
-              //             Provider.of<PageProvider>(context, listen: false)
-              //                 .setPage(SubscribedAuctionsPage.pageIndex,
-              //                     SubscribedAuctionsPage());
-              //           },
-              //           arrowColor: Colors.grey,
-              //         ),
-              //       )
-              //     : SizedBox.shrink(),
-              // isLoggedin
-              //     ? Container(
-              //         decoration: BoxDecoration(
-              //           border: Border.symmetric(
-              //             horizontal: BorderSide(
-              //               color: Colors.grey,
-              //               width: .5,
-              //             ),
-              //           ),
-              //         ),
-              //         child: drawerItem(
-              //           context,
-              //           AppLocalization.of(context).translate('my_auctions'),
-              //           FontAwesomeIcons.gavel,
-              //           onTap: () {
-              //             if (AppUtils.userData == null) {
-              //               AppUtils.showNeedToRegisterDialog(context);
-              //               return;
-              //             }
-              //             Provider.of<PageProvider>(context, listen: false)
-              //                 .setPage(
-              //                     MyAuctionsPage.pageIndex, MyAuctionsPage());
-              //           },
-              //           arrowColor: Colors.grey,
-              //         ),
-              //       )
-              //     : SizedBox.shrink(),
+              isLoggedin
+                  ? Container(
+                      decoration: BoxDecoration(
+                        border: Border.symmetric(
+                          horizontal: BorderSide(
+                            color: Colors.grey,
+                            width: .5,
+                          ),
+                        ),
+                      ),
+                      child: drawerItem(
+                        context,
+                        AppLocalization.of(context)
+                            .translate('subscribed_auction'),
+                        FontAwesomeIcons.gavel,
+                        onTap: () {
+                          if (AppUtils.userData == null) {
+                            AppUtils.showNeedToRegisterDialog(context);
+                            return;
+                          }
+                          Provider.of<PageProvider>(context, listen: false)
+                              .setPage(SubscribedAuctionsPage.pageIndex,
+                                  SubscribedAuctionsPage());
+                        },
+                        arrowColor: Colors.grey,
+                      ),
+                    )
+                  : SizedBox.shrink(),
+              isLoggedin
+                  ? Container(
+                      decoration: BoxDecoration(
+                        border: Border.symmetric(
+                          horizontal: BorderSide(
+                            color: Colors.grey,
+                            width: .5,
+                          ),
+                        ),
+                      ),
+                      child: drawerItem(
+                        context,
+                        AppLocalization.of(context).translate('my_auctions'),
+                        FontAwesomeIcons.gavel,
+                        onTap: () {
+                          if (AppUtils.userData == null) {
+                            AppUtils.showNeedToRegisterDialog(context);
+                            return;
+                          }
+                          Provider.of<PageProvider>(context, listen: false)
+                              .setPage(
+                                  MyAuctionsPage.pageIndex, MyAuctionsPage());
+                        },
+                        arrowColor: Colors.grey,
+                      ),
+                    )
+                  : SizedBox.shrink(),
               Container(
                 decoration: BoxDecoration(
                   border: Border.symmetric(

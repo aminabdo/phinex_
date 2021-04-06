@@ -102,7 +102,7 @@ class _SingleVideoPageState extends State<SingleVideoPage> {
                         itemBuilder: (context, index) {
                           return ListTile(
                             onTap: () {
-                              // Navigator.of(context).push(MaterialPageRoute(builder: (_) => PersonProfilePage(id: snapshot.data.comments[index].userId, name: snapshot.data.comments[index].userName)));
+                              Navigator.of(context).push(MaterialPageRoute(builder: (_) => PersonProfilePage(id: snapshot.data.comments[index].userId, name: snapshot.data.comments[index].userName)));
                             },
                             leading: CircleAvatar(
                               radius: 20,

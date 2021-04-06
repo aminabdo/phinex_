@@ -67,15 +67,15 @@ class _HomeContentsState extends State<HomeContents> {
         'assets/images/services.png',
         AppLocalization.of(context).translate("services"),
       ),
-      // Categories(
-      //   'assets/images/auction.svg',
-      //   AppLocalization.of(context).translate("auctions"),
-      //   isSvg: true,
-      // ),
-      // Categories(
-      //   'assets/images/auction.png',
-      //   AppLocalization.of(context).translate("lot"),
-      // ),
+      Categories(
+        'assets/images/auction.svg',
+        AppLocalization.of(context).translate("auctions"),
+        isSvg: true,
+      ),
+      Categories(
+        'assets/images/auction.png',
+        AppLocalization.of(context).translate("lot"),
+      ),
       Categories(
         'assets/images/shop-bag.png',
         AppLocalization.of(context).translate("buy_and_sell"),
@@ -88,10 +88,10 @@ class _HomeContentsState extends State<HomeContents> {
         'assets/images/news.png',
         AppLocalization.of(context).translate("news"),
       ),
-      // Categories(
-      //   'assets/images/chat.png',
-      //   AppLocalization.of(context).translate("chats"),
-      // ),
+      Categories(
+        'assets/images/chat.png',
+        AppLocalization.of(context).translate("chats"),
+      ),
       Categories(
         'assets/images/idea.png',
         translate(context, 'ideas_bank'),
@@ -105,10 +105,10 @@ class _HomeContentsState extends State<HomeContents> {
         translate(context, 'suggest_service'),
         width: 80,
       ),
-      // Categories(
-      //   'assets/images/custom_support.png',
-      //   translate(context, 'custom_support'),
-      // ),
+      Categories(
+        'assets/images/custom_support.png',
+        translate(context, 'custom_support'),
+      ),
       Categories(
         'assets/images/coming_soon.png',
         translate(context, 'coming_soon'),
@@ -233,51 +233,47 @@ class _HomeContentsState extends State<HomeContents> {
                         if (index == 0) {
                           pageProvider.setPage(
                               ServicesPage.pageIndex, ServicesPage());
-                        }
-                        // else if (index == 1) {
-                        //   if (AppUtils.userData == null) {
-                        //     AppUtils.showNeedToRegisterDialog(context);
-                        //     return;
-                        //   }
-                        //   pageProvider.setPage(
-                        //       AuctionsPage.pageIndex, AuctionsPage());
-                        // } else if (index == 2) {
-                        //   if (AppUtils.userData == null) {
-                        //     AppUtils.showNeedToRegisterDialog(context);
-                        //     return;
-                        //   }
-                        //   pageProvider.setPage(LotPage.pageIndex, LotPage());
-                        // }
-                        else if (index == 1) {
+                        } else if (index == 1) {
+                          if (AppUtils.userData == null) {
+                            AppUtils.showNeedToRegisterDialog(context);
+                            return;
+                          }
+                          pageProvider.setPage(
+                              AuctionsPage.pageIndex, AuctionsPage());
+                        } else if (index == 2) {
+                          if (AppUtils.userData == null) {
+                            AppUtils.showNeedToRegisterDialog(context);
+                            return;
+                          }
+                          pageProvider.setPage(LotPage.pageIndex, LotPage());
+                        } else if (index == 3) {
                           pageProvider.setPage(
                               BuyAndSellPage.pageIndex, BuyAndSellPage());
-                        } else if (index == 2) {
+                        } else if (index == 4) {
                           pageProvider.setPage(CompaniesIndexPage.pageIndex,
                               CompaniesIndexPage());
-                        } else if (index == 3) {
+                        } else if (index == 5) {
                           pageProvider.setPage(NewsPage.pageIndex, NewsPage());
-                        }
-                        // else if (index == 4) {
-                        //   if (AppUtils.userData == null || AppUtils.userData.id == null) {
-                        //     AppUtils.showNeedToRegisterDialog(context);
-                        //     return;
-                        //   }
-                        //   pageProvider.setPage(
-                        //     MainChatPage.pageIndex,
-                        //     MainChatPage(),
-                        //   );
-                        // } else if (index == 7) {
-                        //   pageProvider.setPage(
-                        //     BankIdeaPage.pageIndex,
-                        //     BankIdeaPage(),
-                        //   );
-                        // }
-                        else if (index == 4) {
+                        } else if (index == 6) {
+                          if (AppUtils.userData == null || AppUtils.userData.id == null) {
+                            AppUtils.showNeedToRegisterDialog(context);
+                            return;
+                          }
+                          pageProvider.setPage(
+                            MainChatPage.pageIndex,
+                            MainChatPage(),
+                          );
+                        } else if (index == 7) {
+                          pageProvider.setPage(
+                            BankIdeaPage.pageIndex,
+                            BankIdeaPage(),
+                          );
+                        } else if (index == 8) {
                           pageProvider.setPage(
                             VideosPage.pageIndex,
                             VideosPage(),
                           );
-                        } else if (index == 5) {
+                        } else if (index == 9) {
                           if (AppUtils.userData == null || AppUtils.userData.id == null) {
                             AppUtils.showNeedToRegisterDialog(context);
                             return;
@@ -286,33 +282,32 @@ class _HomeContentsState extends State<HomeContents> {
                             SuggestServicePage.pageIndex,
                             SuggestServicePage(),
                           );
+                        } else if (index == 10) {
+                          if (AppUtils.userData == null || AppUtils.userData.id == null) {
+                            AppUtils.showNeedToRegisterDialog(context);
+                            return;
+                          }
+
+                          setState(() {
+                            initiateChatWithAdmin = true;
+                          });
+
+                          int id = await adminChatBloc.intiateNewChat();
+                          print('>>>>>>>>>>>>>>>> $id');
+
+                          setState(() {
+                            initiateChatWithAdmin = false;
+                          });
+
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => CustomSupportChatPage(
+                                id: id,
+                              ),
+                            ),
+                          );
                         }
-                        // else if (index == 10) {
-                        //   if (AppUtils.userData == null || AppUtils.userData.id == null) {
-                        //     AppUtils.showNeedToRegisterDialog(context);
-                        //     return;
-                        //   }
-                        //
-                        //   setState(() {
-                        //     initiateChatWithAdmin = true;
-                        //   });
-                        //
-                        //   int id = await adminChatBloc.intiateNewChat();
-                        //   print('>>>>>>>>>>>>>>>> $id');
-                        //
-                        //   setState(() {
-                        //     initiateChatWithAdmin = false;
-                        //   });
-                        //
-                        //   Navigator.push(
-                        //     context,
-                        //     MaterialPageRoute(
-                        //       builder: (_) => CustomSupportChatPage(
-                        //         id: id,
-                        //       ),
-                        //     ),
-                        //   );
-                        // }
                       },
                       child: Card(
                         elevation: 4,

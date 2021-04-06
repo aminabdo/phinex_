@@ -164,7 +164,7 @@ class _HomeSearchPageState extends State<HomeSearchPage> {
                                       itemBuilder: (context, index) {
                                         return ListTile(
                                           onTap: () {
-                                            // Navigator.of(context).push(MaterialPageRoute(builder: (_) => PersonProfilePage(id: snapshot.data.data.users[index].id, name: snapshot.data.data.users[index].username)));
+                                            Navigator.of(context).push(MaterialPageRoute(builder: (_) => PersonProfilePage(id: snapshot.data.data.users[index].id, name: snapshot.data.data.users[index].username)));
                                           },
                                           title: Text(snapshot.data.data.users[index].username ?? ''),
                                           leading: CircleAvatar(
@@ -254,7 +254,7 @@ class _HomeSearchPageState extends State<HomeSearchPage> {
                                       itemBuilder: (context, index) {
                                         return ListTile(
                                           onTap: () {
-                                            // Navigator.of(context).push(MaterialPageRoute(builder: (_) => AuctionUserViewPage(id: snapshot.data.data.auctions[index].id, name: snapshot.data.data.auctions[index].name)));
+                                            Navigator.of(context).push(MaterialPageRoute(builder: (_) => AuctionUserViewPage(id: snapshot.data.data.auctions[index].id, name: snapshot.data.data.auctions[index].name)));
                                           },
                                           title: Text(snapshot.data.data.auctions[index].name ?? ''),
                                           subtitle: Text(snapshot.data.data.auctions[index].categoryName ?? ''),

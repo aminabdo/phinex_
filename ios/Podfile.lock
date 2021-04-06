@@ -4,9 +4,7 @@ PODS:
     - BSGridCollectionViewLayout (= 1.2.5)
     - BSImageView (= 1.0.3)
   - BSImageView (1.0.3)
-  - connectivity (0.0.1):
-    - Flutter
-    - Reachability
+  - CryptoSwift (0.15.0)
   - emoji_picker (0.0.3):
     - Flutter
   - Flutter (1.0.0)
@@ -26,12 +24,20 @@ PODS:
     - Flutter
   - "permission_handler (4.4.0+hotfix.2)":
     - Flutter
-  - Reachability (3.2)
+  - pusher_websocket_flutter (0.1.1):
+    - Flutter
+    - PusherSwift (= 7.0.0)
+  - PusherSwift (7.0.0):
+    - CryptoSwift (~> 0.9)
+    - ReachabilitySwift (= 4.3.0)
+    - Starscream (~> 3.0.5)
+  - ReachabilitySwift (4.3.0)
   - shared_preferences (0.0.1):
     - Flutter
   - sqflite (0.0.2):
     - Flutter
     - FMDB (>= 2.7.5)
+  - Starscream (3.0.6)
   - url_launcher (0.0.1):
     - Flutter
   - video_player (0.0.1):
@@ -40,7 +46,6 @@ PODS:
     - Flutter
 
 DEPENDENCIES:
-  - connectivity (from `.symlinks/plugins/connectivity/ios`)
   - emoji_picker (from `.symlinks/plugins/emoji_picker/ios`)
   - Flutter (from `Flutter`)
   - flutter_absolute_path (from `.symlinks/plugins/flutter_absolute_path/ios`)
@@ -49,6 +54,7 @@ DEPENDENCIES:
   - multi_image_picker (from `.symlinks/plugins/multi_image_picker/ios`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
   - permission_handler (from `.symlinks/plugins/permission_handler/ios`)
+  - pusher_websocket_flutter (from `.symlinks/plugins/pusher_websocket_flutter/ios`)
   - shared_preferences (from `.symlinks/plugins/shared_preferences/ios`)
   - sqflite (from `.symlinks/plugins/sqflite/ios`)
   - url_launcher (from `.symlinks/plugins/url_launcher/ios`)
@@ -60,12 +66,13 @@ SPEC REPOS:
     - BSGridCollectionViewLayout
     - BSImagePicker
     - BSImageView
+    - CryptoSwift
     - FMDB
-    - Reachability
+    - PusherSwift
+    - ReachabilitySwift
+    - Starscream
 
 EXTERNAL SOURCES:
-  connectivity:
-    :path: ".symlinks/plugins/connectivity/ios"
   emoji_picker:
     :path: ".symlinks/plugins/emoji_picker/ios"
   Flutter:
@@ -82,6 +89,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/path_provider/ios"
   permission_handler:
     :path: ".symlinks/plugins/permission_handler/ios"
+  pusher_websocket_flutter:
+    :path: ".symlinks/plugins/pusher_websocket_flutter/ios"
   shared_preferences:
     :path: ".symlinks/plugins/shared_preferences/ios"
   sqflite:
@@ -97,7 +106,7 @@ SPEC CHECKSUMS:
   BSGridCollectionViewLayout: 333dcb457a5a3bdd9212607ab5756553dcfe06cb
   BSImagePicker: 07404254f2fcdaf5a2eb403c0f8c337267ce8738
   BSImageView: a149459433a2687157d034c78e059d30ac7f2544
-  connectivity: c4130b2985d4ef6fd26f9702e886bd5260681467
+  CryptoSwift: 769f58a9e89f64e8796c2e59ce5f002dc81a2438
   emoji_picker: 0e868059aa18f9473d234f3d0701fbd4d5fd310c
   Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
   flutter_absolute_path: 5adb13678c88f0bdfba527f3851f9543d01dde66
@@ -107,9 +116,12 @@ SPEC CHECKSUMS:
   multi_image_picker: 58577ab96d99b35c82d626db7d81906d14c2b667
   path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
   permission_handler: d5d46b2ca93671e8dcf870b949e304c7ddb65ad0
-  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  pusher_websocket_flutter: ff9a11e48f24d2297bf0d143c99119106cd2d81b
+  PusherSwift: d15d6290be0b0b57fd9ac80b03661a6ba24623ec
+  ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
   shared_preferences: af6bfa751691cdc24be3045c43ec037377ada40d
   sqflite: 6d358c025f5b867b29ed92fc697fd34924e11904
+  Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
   url_launcher: 6fef411d543ceb26efce54b05a0a40bfd74cbbef
   video_player: 9cc823b1d9da7e8427ee591e8438bfbcde500e6e
   wakelock: bfc7955c418d0db797614075aabbc58a39ab5107
