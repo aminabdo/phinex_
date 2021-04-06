@@ -1,0 +1,4 @@
+class BaseRequest{
+  toJson() {}
+
+}
