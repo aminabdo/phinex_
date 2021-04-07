@@ -39,7 +39,6 @@ dependencies:
   weekday_selector: 0.4.0
   pusher_websocket_flutter: ^0.2.0
   dotted_border:
-  #flutter_pusher: 1.0.2
   emoji_picker: ^0.1.0
   image_picker: ^0.6.7+15
   currency_picker: ^1.0.4
