@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:phinex/ui/views/driver/main_driver_page.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:phinex/providers/page_provider.dart';
@@ -63,11 +64,11 @@ class _ServicesPageState extends State<ServicesPage> {
         'assets/images/medical.png',
         AppLocalization.of(context).translate("medical_services"),
       ),
-      // Categories(
-      //   'assets/images/map_icon.svg',
-      //   AppLocalization.of(context).translate('request_a_ride'),
-      //   isSvg: true,
-      // ),
+      Categories(
+        'assets/images/map_icon.svg',
+        AppLocalization.of(context).translate('request_a_ride'),
+        isSvg: true,
+      ),
       Categories(
         'assets/images/recruitment.svg',
         AppLocalization.of(context).translate('recruitment'),
@@ -157,11 +158,58 @@ class _ServicesPageState extends State<ServicesPage> {
                         MedicalServicesPage(),
                       );
                     } else if (index == 6) {
+                      if (AppUtils.userData == null) {
+                        AppUtils.showNeedToRegisterDialog(context);
+                        return;
+                      }
+
+                      SharedPreferences preferences = await SharedPreferences.getInstance();
+                      bool result;
+
+                      if(preferences.getBool('locationDialog') ?? false) {
+                        result = true;
+                      } else {
+                        result = await showDialog(
+                          context: context,
+                          barrierDismissible: false,
+                          builder: (context) {
+                            return AlertDialog(
+                              title: Text('Attention'),
+                              content: Text(
+                                'This service will use the location in the background To facilitate the trip tracking process',
+                              ),
+                              actions: [
+                                FlatButton(
+                                  onPressed: () {
+                                    Navigator.pop(context, true);
+                                  },
+                                  child: Text('OK ACCEPT'),
+                                ),
+                                FlatButton(
+                                  onPressed: () {
+                                    Navigator.pop(context, false);
+                                  },
+                                  child: Text('Cancel'),
+                                )
+                              ],
+                            );
+                          },
+                        );
+                      }
+
+                      if(result) {
+                        preferences.setBool('locationDialog', true);
+                        pageProvider.setPage(
+                          MainDriverPage.pageIndex,
+                          MainDriverPage(),
+                        );
+                      }
+                    } else if (index == 7) {
                       pageProvider.setPage(
                         RecruitmentPage.pageIndex,
                         RecruitmentPage(),
                       );
-                    } else if (index == 7) {
+                    } else if (index == 8) {
                       pageProvider.setPage(
                         EducationPage.pageIndex,
                         EducationPage(),
@@ -173,27 +221,27 @@ class _ServicesPageState extends State<ServicesPage> {
                     //     TourismPage(),
                     //   );
                     // }
-                    else if (index == 8) {
+                    else if (index == 9) {
                       pageProvider.setPage(
                         HolidaysPage.pageIndex,
                         HolidaysPage(),
                       );
-                    } else if (index == 9) {
+                    } else if (index == 10) {
                       pageProvider.setPage(
                         ShippingPage.pageIndex,
                         ShippingPage(),
                       );
-                    } else if (index == 10) {
+                    } else if (index == 11) {
                       pageProvider.setPage(
                         SportsPage.pageIndex,
                         SportsPage(),
                       );
-                    } else if (index == 11) {
+                    } else if (index == 12) {
                       pageProvider.setPage(
                         FestivalPage.pageIndex,
                         FestivalPage(),
                       );
-                    } else if (index == 12) {
+                    } else if (index == 13) {
                       pageProvider.setPage(
                         SecurityPage.pageIndex,
                         SecurityPage(),
@@ -207,19 +255,19 @@ class _ServicesPageState extends State<ServicesPage> {
                       children: [
                         categories[index].isSvg
                             ? SvgPicture.asset(
-                                categories[index].imagePath,
-                                width: ScreenUtil()
-                                    .setWidth(categories[index].width ?? 60),
-                                height: ScreenUtil()
-                                    .setHeight(categories[index].height ?? 90),
-                              )
+                          categories[index].imagePath,
+                          width: ScreenUtil()
+                              .setWidth(categories[index].width ?? 60),
+                          height: ScreenUtil()
+                              .setHeight(categories[index].height ?? 90),
+                        )
                             : Image.asset(
-                                categories[index].imagePath,
-                                width: ScreenUtil()
-                                    .setWidth(categories[index].width ?? 60),
-                                height: ScreenUtil()
-                                    .setHeight(categories[index].height ?? 90),
-                              ),
+                          categories[index].imagePath,
+                          width: ScreenUtil()
+                              .setWidth(categories[index].width ?? 60),
+                          height: ScreenUtil()
+                              .setHeight(categories[index].height ?? 90),
+                        ),
                         Text(categories[index].title),
                       ],
                     ),
@@ -230,7 +278,7 @@ class _ServicesPageState extends State<ServicesPage> {
             itemCount: categories.length,
             physics: bouncingScrollPhysics,
             gridDelegate:
-                MySliverGridDelegateWithFixedCrossAxisCountAndFixedHeight(
+            MySliverGridDelegateWithFixedCrossAxisCountAndFixedHeight(
               crossAxisCount: 2,
               height: ScreenUtil().setHeight(170),
               crossAxisSpacing: 15,
