@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:bubble/bubble.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:chewie/chewie.dart';
-import 'package:emoji_picker/emoji_picker.dart';
+// import 'package:emoji_picker/emoji_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -378,15 +378,15 @@ class _PrivateGroupChatPageState extends State<PrivateGroupChatPage> {
   }
 
   Widget buildSticker() {
-    return EmojiPicker(
-      rows: 3,
-      columns: 7,
-      buttonMode: ButtonMode.MATERIAL,
-      numRecommended: 10,
-      onEmojiSelected: (emoji, category) {
-        textEditingController.text += emoji.emoji;
-      },
-    );
+    // return EmojiPicker(
+    //   rows: 3,
+    //   columns: 7,
+    //   buttonMode: ButtonMode.MATERIAL,
+    //   numRecommended: 10,
+    //   onEmojiSelected: (emoji, category) {
+    //     textEditingController.text += emoji.emoji;
+    //   },
+    // );
   }
 
   Widget senderWidget(Widget child, String date) {

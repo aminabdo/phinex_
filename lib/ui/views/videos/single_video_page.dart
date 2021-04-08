@@ -102,15 +102,11 @@ class _SingleVideoPageState extends State<SingleVideoPage> {
                         itemBuilder: (context, index) {
                           return ListTile(
                             onTap: () {
-                              Navigator.of(context).push(MaterialPageRoute(builder: (_) => PersonProfilePage(id: snapshot.data.comments[index].userId, name: snapshot.data.comments[index].userName)));
+                              // Navigator.of(context).push(MaterialPageRoute(builder: (_) => PersonProfilePage(id: snapshot.data.comments[index].userId, name: snapshot.data.comments[index].userName)));
                             },
                             leading: CircleAvatar(
                               radius: 20,
-                              backgroundImage: snapshot
-                                              .data.comments[index].userImage ==
-                                          null ||
-                                      snapshot.data.comments[index].userImage ==
-                                          ''
+                              backgroundImage: snapshot.data.comments[index].userImage == null || snapshot.data.comments[index].userImage == ''
                                   ? AssetImage(
                                       'assets/images/avatar.png',
                                     )
@@ -124,7 +120,7 @@ class _SingleVideoPageState extends State<SingleVideoPage> {
                                 snapshot.data.comments[index].comment ?? ''),
                           );
                         },
-                        itemCount: snapshot.data.comments.length,
+                        itemCount: snapshot.data.comments?.length,
                         physics: NeverScrollableScrollPhysics(),
                         shrinkWrap: true,
                       ),

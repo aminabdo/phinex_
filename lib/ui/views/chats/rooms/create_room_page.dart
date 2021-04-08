@@ -25,7 +25,6 @@ class _CreateRoomPageState extends State<CreateRoomPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: false,
-        resizeToAvoidBottomPadding: false,
         appBar: myAppBar(
           translate(context, 'create_room'),
           context,

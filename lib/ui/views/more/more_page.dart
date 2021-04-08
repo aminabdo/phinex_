@@ -404,9 +404,9 @@ class _MorePageState extends State<MorePage> {
                             AppUtils.showNeedToRegisterDialog(context);
                             return;
                           }
-                          Provider.of<PageProvider>(context, listen: false)
-                              .setPage(SubscribedAuctionsPage.pageIndex,
-                                  SubscribedAuctionsPage());
+                          // Provider.of<PageProvider>(context, listen: false)
+                          //     .setPage(SubscribedAuctionsPage.pageIndex,
+                          //         SubscribedAuctionsPage());
                         },
                         arrowColor: Colors.grey,
                       ),
@@ -431,9 +431,9 @@ class _MorePageState extends State<MorePage> {
                             AppUtils.showNeedToRegisterDialog(context);
                             return;
                           }
-                          Provider.of<PageProvider>(context, listen: false)
-                              .setPage(
-                                  MyAuctionsPage.pageIndex, MyAuctionsPage());
+                          // Provider.of<PageProvider>(context, listen: false)
+                          //     .setPage(
+                          //         MyAuctionsPage.pageIndex, MyAuctionsPage());
                         },
                         arrowColor: Colors.grey,
                       ),

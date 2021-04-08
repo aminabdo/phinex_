@@ -238,14 +238,13 @@ class _HomeContentsState extends State<HomeContents> {
                             AppUtils.showNeedToRegisterDialog(context);
                             return;
                           }
-                          pageProvider.setPage(
-                              AuctionsPage.pageIndex, AuctionsPage());
+                          // pageProvider.setPage(AuctionsPage.pageIndex, AuctionsPage());
                         } else if (index == 2) {
                           if (AppUtils.userData == null) {
                             AppUtils.showNeedToRegisterDialog(context);
                             return;
                           }
-                          pageProvider.setPage(LotPage.pageIndex, LotPage());
+                          // pageProvider.setPage(LotPage.pageIndex, LotPage());
                         } else if (index == 3) {
                           pageProvider.setPage(
                               BuyAndSellPage.pageIndex, BuyAndSellPage());
@@ -259,10 +258,10 @@ class _HomeContentsState extends State<HomeContents> {
                             AppUtils.showNeedToRegisterDialog(context);
                             return;
                           }
-                          pageProvider.setPage(
-                            MainChatPage.pageIndex,
-                            MainChatPage(),
-                          );
+                          // pageProvider.setPage(
+                          //   MainChatPage.pageIndex,
+                          //   MainChatPage(),
+                          // );
                         } else if (index == 7) {
                           pageProvider.setPage(
                             BankIdeaPage.pageIndex,
@@ -292,21 +291,21 @@ class _HomeContentsState extends State<HomeContents> {
                             initiateChatWithAdmin = true;
                           });
 
-                          int id = await adminChatBloc.intiateNewChat();
-                          print('>>>>>>>>>>>>>>>> $id');
+                          // int id = await adminChatBloc.intiateNewChat();
+                          // print('>>>>>>>>>>>>>>>> $id');
 
                           setState(() {
                             initiateChatWithAdmin = false;
                           });
 
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (_) => CustomSupportChatPage(
-                                id: id,
-                              ),
-                            ),
-                          );
+                          // Navigator.push(
+                          //   context,
+                          //   MaterialPageRoute(
+                          //     builder: (_) => CustomSupportChatPage(
+                          //       id: id,
+                          //     ),
+                          //   ),
+                          // );
                         }
                       },
                       child: Card(

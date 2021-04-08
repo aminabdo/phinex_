@@ -22,44 +22,6 @@ class BaseApiProvider {
         },
       );
 
-  d1io1() {
-    dio.interceptors.clear();
-    dio.interceptors.add(
-      InterceptorsWrapper(
-        onRequest: (RequestOptions options) {
-          // Do something before request is sent
-          // options.headers["Authorization"] = "Bearer " + token;
-          options.headers["Authorization"] = token;
-          return options;
-        },
-        onResponse: (Response response) {
-          // Do something with response data
-          return response; // continue
-        },
-        onError: (DioError error) async {
-          // Do something with response error
-          if (error.response?.statusCode == 403) {
-            dio.interceptors.requestLock.lock();
-            dio.interceptors.responseLock.lock();
-            RequestOptions options = error.response.request;
-            // FirebaseUser user = await FirebaseAuth.instance.currentUser();
-            // token = await user.getIdToken(refresh: true);
-            // await writeAuthKey(token);
-            options.headers["Authorization"] = "Bearer " + token;
-
-            dio.interceptors.requestLock.unlock();
-            dio.interceptors.responseLock.unlock();
-            return dio.request(options.path, options: options);
-          } else {
-            return error;
-          }
-        },
-      ),
-    );
-
-    dio.options.baseUrl = baseUrl;
-    return dio;
-  }
 
   Dio dio = Dio();
 
@@ -184,39 +146,6 @@ class BaseApiProvider {
       print("Exception occured: $error stackTrace: $stacktrace");
       return null;
     }
-  }
-
-  Future<Dio> getApiClient() async {
-    String token = "await storage.read(key: USER_TOKEN)";
-    dio.interceptors.clear();
-    dio.interceptors
-        .add(InterceptorsWrapper(onRequest: (RequestOptions options) {
-      // Do something before request is sent
-      options.headers["Authorization"] = "Bearer " + token;
-      return options;
-    }, onResponse: (Response response) {
-      // Do something with response data
-      return response; // continue
-    }, onError: (DioError error) async {
-      // Do something with response error
-      if (error.response?.statusCode == 403) {
-        dio.interceptors.requestLock.lock();
-        dio.interceptors.responseLock.lock();
-        RequestOptions options = error.response.request;
-        // FirebaseUser user = await FirebaseAuth.instance.currentUser();
-        // token = await user.getIdToken(refresh: true);
-        // await writeAuthKey(token);
-        options.headers["Authorization"] = "Bearer " + token;
-
-        dio.interceptors.requestLock.unlock();
-        dio.interceptors.responseLock.unlock();
-        return dio.request(options.path, options: options);
-      } else {
-        return error;
-      }
-    }));
-    dio.options.baseUrl = baseUrl;
-    return dio;
   }
 
   Future<Response> generalPatch(

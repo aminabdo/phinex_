@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_absolute_path/flutter_absolute_path.dart';
 import 'package:flutter_screenutil/screenutil.dart';
@@ -413,31 +412,6 @@ class _EditProfilePageState extends State<EditProfilePage> {
                                       horizontal: 20,
                                       vertical: 3,
                                     ),
-                                    child: DottedBorder(
-                                      radius: Radius.circular(12),
-                                      borderType: BorderType.RRect,
-                                      color: mainColor,
-                                      strokeWidth: 1.5,
-                                      child: Center(
-                                        child: Row(
-                                          mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                          children: [
-                                            Icon(
-                                              Icons.add,
-                                              size: 14,
-                                              color: mainColor,
-                                            ),
-                                            Text(
-                                              'Add Photos',
-                                              style: TextStyle(
-                                                color: mainColor,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
                                   ),
                                 )
                                     : Column(
@@ -473,33 +447,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                                               margin: EdgeInsets.symmetric(
                                                   horizontal: 5,
                                                   vertical: 5),
-                                              child: DottedBorder(
-                                                radius: Radius.circular(12),
-                                                borderType:
-                                                BorderType.RRect,
-                                                color: mainColor,
-                                                strokeWidth: 1.5,
-                                                child: Center(
-                                                  child: Row(
-                                                    mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .center,
-                                                    children: [
-                                                      Icon(
-                                                        Icons.add,
-                                                        size: 14,
-                                                        color: mainColor,
-                                                      ),
-                                                      Text(
-                                                        translate(context, 'add_photos'),
-                                                        style: TextStyle(
-                                                          color: mainColor,
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                              ),
+
                                             ),
                                           );
                                         }
@@ -590,31 +538,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                                   itemCount: snapshot.data.data.gallery.length,
                                   itemBuilder: (context, index) {
                                     if (index == 0) {
-                                      return DottedBorder(
-                                        radius: Radius.circular(12),
-                                        borderType: BorderType.RRect,
-                                        color: mainColor,
-                                        strokeWidth: 1.5,
-                                        child: Center(
-                                          child: Row(
-                                            mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                            children: [
-                                              Icon(
-                                                Icons.add,
-                                                size: 14,
-                                                color: mainColor,
-                                              ),
-                                              Text(
-                                                translate(context, 'add_photos'),
-                                                style: TextStyle(
-                                                  color: mainColor,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      );
+
                                     }
                                     return ClipRRect(
                                       borderRadius: BorderRadius.circular(12),

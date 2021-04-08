@@ -90,12 +90,12 @@ class _AddEditVideoPageState extends State<AddEditVideoPage> {
                         bool permissionIsGranted =
                             await AppUtils.askPhotosPermission();
                         if (permissionIsGranted) {
-                          var pickedFile = await ImagePicker.pickVideo(
+                          var pickedFile = await ImagePicker().getVideo(
                             source: ImageSource.gallery,
                             maxDuration: Duration(seconds: 30),
                           );
                           if (pickedFile != null) {
-                            videoFile = pickedFile;
+                            videoFile = File(pickedFile.path);
                             _controller = VideoPlayerController.file(
                               videoFile,
                             );

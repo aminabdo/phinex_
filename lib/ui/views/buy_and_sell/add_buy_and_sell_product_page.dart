@@ -110,24 +110,24 @@ class _AddBuySellProductPageState extends State<AddBuySellProductPage> {
   }
 
   getDataAuction(BuildContext context) {
-    auctionBloc.create.stream.listen(
-      (value) {
-        if (value.statusCode >= 200 && value.statusCode < 300) {
-          isLoading = false;
-          setState(() {});
-          showDialog(
-            context: context,
-            builder: (_) => DoneDialogContent(
-              msg: translate(context, 'product_added_successfully'),
-            ),
-          );
-        } else {
-          isLoading = false;
-          setState(() {});
-          AppUtils.showToast(msg: value.data['message']);
-        }
-      },
-    );
+    // auctionBloc.create.stream.listen(
+    //   (value) {
+    //     if (value.statusCode >= 200 && value.statusCode < 300) {
+    //       isLoading = false;
+    //       setState(() {});
+    //       showDialog(
+    //         context: context,
+    //         builder: (_) => DoneDialogContent(
+    //           msg: translate(context, 'product_added_successfully'),
+    //         ),
+    //       );
+    //     } else {
+    //       isLoading = false;
+    //       setState(() {});
+    //       AppUtils.showToast(msg: value.data['message']);
+    //     }
+    //   },
+    // );
   }
 
   @override
@@ -146,7 +146,7 @@ class _AddBuySellProductPageState extends State<AddBuySellProductPage> {
     if (!doneStatus) {
       doneStatus = true;
       buySellBloc.create.onListen = getData(context);
-      auctionBloc.create.onListen = getDataAuction(context);
+      // auctionBloc.create.onListen = getDataAuction(context);
       selectedPriceType = priceTypeList[0];
       langs.add(
         LangBuySellBean(
@@ -1096,7 +1096,7 @@ class _AddBuySellProductPageState extends State<AddBuySellProductPage> {
           lang: auctionLangs
         );
 
-        auctionBloc.createAuction(request);
+        // auctionBloc.createAuction(request);
       }
     }
   }

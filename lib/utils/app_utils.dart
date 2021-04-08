@@ -81,17 +81,12 @@ class AppUtils {
   // true if granted : false if denied
   static Future<bool> askPhotosPermission() async {
     bool permissionState = false;
-    await PermissionHandler().requestPermissions([
-      PermissionGroup.photos,
-    ]).then(
-          (Map<PermissionGroup, PermissionStatus> map) {
-        if (map[PermissionGroup.photos] == PermissionStatus.granted) {
-          permissionState = true;
-        } else {
-          permissionState = false;
-        }
-      },
-    );
+    await Permission.photos.request();
+    if(await Permission.photos.isGranted) {
+      permissionState = true;
+    } else {
+      permissionState = false;
+    }
 
     print('state of permission >>>> $permissionState');
     return permissionState;
@@ -100,51 +95,31 @@ class AppUtils {
   // true if granted : false if denied
   static Future<bool> askCameraPermission() async {
     bool permissionState = false;
-    await PermissionHandler().requestPermissions([
-      PermissionGroup.camera,
-    ]).then(
-          (Map<PermissionGroup, PermissionStatus> map) {
-        if (map[PermissionGroup.camera] == PermissionStatus.granted) {
-          permissionState = true;
-        } else {
-          permissionState = false;
-        }
-      },
-    );
+    await Permission.photos.request();
+    if(await Permission.camera.isGranted) {
+      permissionState = true;
+    } else {
+      permissionState = false;
+    }
 
     print('state of permission >>>> $permissionState');
     return permissionState;
   }
 
   // true if granted : false if denied
-  static Future<bool> checkPermissionState(PermissionGroup permissions) async {
-    bool permissionState = false;
-    await PermissionHandler().checkPermissionStatus(permissions).then(
-          (state) {
-        if (state == PermissionStatus.granted) {
-          permissionState = true;
-        } else {
-          permissionState = false;
-        }
-      },
-    );
-    return permissionState;
+  static Future<bool> checkPermissionState(Permission permissions) async {
+    return await permissions.isGranted;
   }
 
   // true if granted : false if denied
   static Future<bool> askLocationPermission() async {
     bool permissionState = false;
-    await PermissionHandler().requestPermissions([
-      PermissionGroup.location,
-    ]).then(
-          (Map<PermissionGroup, PermissionStatus> map) {
-        if (map[PermissionGroup.location] == PermissionStatus.granted) {
-          permissionState = true;
-        } else {
-          permissionState = false;
-        }
-      },
-    );
+    await Permission.location.request();
+    if(await Permission.photos.isGranted) {
+      permissionState = true;
+    } else {
+      permissionState = false;
+    }
 
     print('state of permission >>>> $permissionState');
     return permissionState;
