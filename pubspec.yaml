@@ -37,8 +37,8 @@ dependencies:
   flare_flutter:
   flutter_absolute_path: ^1.0.6
   weekday_selector: 0.4.0
-#  pusher_websocket_flutter: ^0.2.0
-##  flutter_pusher: 1.0.2
+  pusher_websocket_flutter: ^0.2.0
+# flutter_pusher: 1.0.2
 #  dotted_border: ^1.0.7
   image_picker: 0.7.4
   currency_picker: ^1.0.4
@@ -57,6 +57,11 @@ dependencies:
   photo_view: ^0.10.3
   language_pickers: ^0.2.0+1
   flutter_launcher_icons:
+  google_maps_flutter: ^2.0.3
+  location: ^4.1.1
+  geocoder: ^0.2.1
+  google_places_picker: ^3.0.1
+  flutter_polyline_points: ^0.2.6
   flutter_html:
 
 flutter_icons:

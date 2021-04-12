@@ -24,6 +24,10 @@
 	<true/>
 	<key>NSAppleMusicUsageDescription</key>
 	<string>Phinex App This permission is not needed by the app, but it is required by an underlying API. If you see this dialog, contact us.</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Phinex app need to use Bluetooth</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>Phinex app need to use Bluetooth</string>
 	<key>NSCalendarsUsageDescription</key>
 	<string>Phinex App Need Calendar usage to add appointments of app to your calender</string>
 	<key>NSCameraUsageDescription</key>
@@ -34,7 +38,7 @@
 	<key>NSContactsUsageDescription</key>
 	<string>Phinex app uses the Contacts to show your contacts friends in our app</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Your location is required for Phinex App benefits for you to request adriver from your location</string>
+	<string>Phinex App need to use your location</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Your location is required for Phinex App benefits for you to request adriver from your location</string>
 	<key>NSMotionUsageDescription</key>
